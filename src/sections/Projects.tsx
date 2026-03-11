@@ -1,5 +1,6 @@
 import Image from "next/image";
 import pokemon_SearchPage from "@/assets/images/pokemon_Search.png";
+import solidi_Thai_DashBoard from "@/assets/images/solidi_Thai_DashBoard.png";
 import GithubIcon from "@/assets/icons/github.svg";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -14,10 +15,23 @@ const portfolioProjects = [
     results: [
       { title: "Next.js" },
       { title: "Tailwind" },
+      { title: "Css" },
     ],
     link: "https://search-pokemon-jaruphat-virid.vercel.app/",
     githubLink: "https://github.com/SSzSun/search-pokemon",
     image: pokemon_SearchPage,
+  },
+  {
+    company: "My Testing",
+    year: "2024",
+    title: "Solidi Thai DashBoard",
+    results: [
+      { title: "React" },
+      { title: "Tailwind" },
+    ],
+    link: "https://solidi-thai-front-end-dev.vercel.app/",
+    githubLink: "https://github.com/SSzSun/SolidiThai_Front-end-Dev",
+    image: solidi_Thai_DashBoard,
   },
 ];
 
