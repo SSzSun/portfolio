@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 import { useState } from 'react';
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
