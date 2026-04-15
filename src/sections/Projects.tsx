@@ -1,6 +1,7 @@
 import Image from "next/image";
 import pokemon_SearchPage from "@/assets/images/pokemon_Search.png";
 import solidi_Thai_DashBoard from "@/assets/images/solidi_Thai_DashBoard.png";
+import mylogin_jwt from "@/assets/images/mylogin_jwt.png";
 import GithubIcon from "@/assets/icons/github.svg";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -32,6 +33,19 @@ const portfolioProjects = [
     link: "https://solidi-thai-front-end-dev.vercel.app/",
     githubLink: "https://github.com/SSzSun/SolidiThai_Front-end-Dev",
     image: solidi_Thai_DashBoard,
+  },
+  {
+    company: "My Testing",
+    year: "2026",
+    title: "My Login with JWT",
+    results: [
+      { title: "Angular" },
+      { title: "Tailwind" },
+      { title: "Go" },
+    ],
+    link: "https://solidi-thai-front-end-dev.vercel.app/",
+    githubLink: "https://github.com/SSzSun/mylogin-jwt",
+    image: mylogin_jwt,
   },
 ];
 
