@@ -43,7 +43,6 @@ const portfolioProjects = [
       { title: "Tailwind" },
       { title: "Go" },
     ],
-    link: "https://solidi-thai-front-end-dev.vercel.app/",
     githubLink: "https://github.com/SSzSun/mylogin-jwt",
     image: mylogin_jwt,
   },
@@ -88,15 +87,17 @@ export const ProjectsSection = () => {
                     ))}
                   </ul>
                   <div className="flex flex-col md:flex-row gap-4 mt-8">
-                  <a href={project.link} target="_blank">
-                    <button
-                      className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 
-                rounded-xl font-semibold inline-flex items-center justify-items-center gap-2"
-                    >
-                      <span>View Live Site</span>
-                      <ArrowUpRightIcon className="size-4" />
-                    </button>
-                  </a>
+                  {project.link && (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <button
+                        className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 
+                        rounded-xl font-semibold inline-flex items-center justify-items-center gap-2"
+                      >
+                        <span>View Live Site</span>
+                        <ArrowUpRightIcon className="size-4" />
+                      </button>
+                    </a>
+                  )}
                   <a href={project.githubLink} target="_blank">
                     <button
                       className="bg-gray-900 text-white h-12 w-full md:w-auto px-6 
