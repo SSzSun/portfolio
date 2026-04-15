@@ -9,6 +9,18 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 
 const portfolioProjects = [
+    {
+    company: "My Testing",
+    year: "2026",
+    title: "My Login with JWT",
+    results: [
+      { title: "Angular" },
+      { title: "Tailwind" },
+      { title: "Go" },
+    ],
+    githubLink: "https://github.com/SSzSun/mylogin-jwt",
+    image: mylogin_jwt,
+  },
   {
     company: "My Project",
     year: "2024",
@@ -33,19 +45,7 @@ const portfolioProjects = [
     link: "https://solidi-thai-front-end-dev.vercel.app/",
     githubLink: "https://github.com/SSzSun/SolidiThai_Front-end-Dev",
     image: solidi_Thai_DashBoard,
-  },
-  {
-    company: "My Testing",
-    year: "2026",
-    title: "My Login with JWT",
-    results: [
-      { title: "Angular" },
-      { title: "Tailwind" },
-      { title: "Go" },
-    ],
-    githubLink: "https://github.com/SSzSun/mylogin-jwt",
-    image: mylogin_jwt,
-  },
+  }
 ];
 
 export const ProjectsSection = () => {
