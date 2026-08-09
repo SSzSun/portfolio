@@ -9,7 +9,21 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 
 const portfolioProjects = [
-    {
+  {
+    company: "My Project",
+    year: "2026",
+    title: "Harnpa",
+    results: [
+      { title: "Next.js" },
+      { title: "Tailwind" },
+      { title: "Firebase" },
+      { title: "Open Graph" },
+    ],
+    link: "https://harnpa-kohl.vercel.app/th",
+    githubLink: "https://github.com/SSzSun/harnpa",
+    image: harnpa,
+  },
+  {
     company: "My Testing",
     year: "2026",
     title: "My Login with JWT",
