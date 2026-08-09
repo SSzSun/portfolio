@@ -1,7 +1,7 @@
 import Image from "next/image";
 import pokemon_SearchPage from "@/assets/images/pokemon_Search.png";
 import solidi_Thai_DashBoard from "@/assets/images/solidi_Thai_DashBoard.png";
-import mylogin_jwt from "@/assets/images/mylogin_jwt.png";
+import harnpa from "@/assets/images/harnpa.png";
 import GithubIcon from "@/assets/icons/github.svg";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -22,18 +22,6 @@ const portfolioProjects = [
     link: "https://harnpa-kohl.vercel.app/th",
     githubLink: "https://github.com/SSzSun/harnpa",
     image: harnpa,
-  },
-  {
-    company: "My Testing",
-    year: "2026",
-    title: "My Login with JWT",
-    results: [
-      { title: "Angular" },
-      { title: "Tailwind" },
-      { title: "Go" },
-    ],
-    githubLink: "https://github.com/SSzSun/mylogin-jwt",
-    image: mylogin_jwt,
   },
   {
     company: "My Project",
