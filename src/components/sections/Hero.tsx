@@ -66,15 +66,15 @@ export function Hero({ summary }: { summary: string }) {
         {/* Cassette-style profile frame. Click the photo to flip sides. */}
         <div className="pixel-border mx-auto w-full max-w-sm rounded-[0.5rem] bg-beige p-4 text-charcoal">
           <div className="flex items-center justify-between font-mono text-xs uppercase">
-            <span>Side A</span>
-            <span>C-90</span>
+            <span>Side XII</span>
+            <span>C-1203</span>
           </div>
           <div className="mt-3 aspect-[4/5] overflow-hidden rounded-[0.5rem] border-2 border-charcoal bg-navy">
             <ProfilePhoto photos={site.avatars} name={site.name} />
           </div>
           <div className="mt-4 flex items-center justify-around rounded-[0.5rem] bg-charcoal py-3 text-beige">
             <TapeReel size={44} />
-            <span className="font-mono text-xs uppercase tracking-widest">{site.nickname}.mix</span>
+            <span className="font-mono text-xs uppercase tracking-widest">{site.nickname}.jrp</span>
             <TapeReel size={44} />
           </div>
         </div>
