@@ -25,7 +25,7 @@ export function Hero({ summary }: { summary: string }) {
           <HeroSummary summary={summary} />
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={site.resume} download={site.resumeFileName} className={buttonClass("primary")}>
+            <a href={site.resume} className={buttonClass("primary")}>
               <Download aria-hidden="true" className="size-5" /> Download resume
             </a>
             <a

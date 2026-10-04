@@ -7,8 +7,7 @@ export const site = {
   email: "jaruphat.kp@gmail.com",
   // Opens Gmail's compose window; friendlier than mailto for most visitors.
   gmailCompose: "https://mail.google.com/mail/?view=cm&fs=1&to=jaruphat.kp@gmail.com",
-  resume: "/resume.pdf",
-  resumeFileName: "Resume_Jaruphat.pdf",
+  resume: "/resume_Jaruphat.pdf",
   // Profile photos; clicking the photo toggles between the two.
   avatars: ["/profile.webp", "/profile_1.webp"],
   social: {
