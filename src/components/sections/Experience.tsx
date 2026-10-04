@@ -60,7 +60,7 @@ export function Experience({ items }: { items: ExperienceItem[] }) {
                     <h3 className="text-2xl text-offwhite">{item.role}</h3>
                     <p className="text-lg text-crt">@ {item.company}</p>
                     {item.description && (
-                      <p className="mt-3 max-w-[72ch] whitespace-pre-line text-beige">
+                      <p className="mt-3 max-w-full whitespace-pre-line text-beige">
                         {item.description}
                       </p>
                     )}
