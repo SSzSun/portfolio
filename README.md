@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# SUN.SYS
 
-First, run the development server:
+**Personal portfolio of Jaruphat Khenprom (Sun), Full-Stack Developer**
+
+A single-page portfolio styled as a 1980s CRT terminal, with content managed live from Supabase.
+
+![Next.js](https://img.shields.io/badge/Next.js_15-141a20?style=flat-square&logo=nextdotjs&logoColor=33ff00)
+![TypeScript](https://img.shields.io/badge/TypeScript-141a20?style=flat-square&logo=typescript&logoColor=33ff00)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_v4-141a20?style=flat-square&logo=tailwindcss&logoColor=33ff00)
+![Supabase](https://img.shields.io/badge/Supabase-141a20?style=flat-square&logo=supabase&logoColor=33ff00)
+![Bun](https://img.shields.io/badge/Bun-141a20?style=flat-square&logo=bun&logoColor=33ff00)
+
+</div>
+
+---
+
+## Overview
+
+- Retro cassette-futurism design: CRT scanlines, phosphor glow, tape reel animations
+- Work experience and projects stored in Supabase
+- Admin customizer to add, edit, hide, or delete content right on the page
+- Projects shown with tech stack, an architecture diagram, and impact metrics
+- Visitor counter, responsive layout, accessible markup
+
+## Quick start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+cp .env.example .env.local   # add your Supabase URL and publishable key
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the SQL files in `supabase/migrations/` on your Supabase project. `supabase/seed.sql` adds optional sample data.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Import the repo into Vercel, add the variables from `.env.local`, and deploy.
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Email](mailto:jaruphat.kp@gmail.com) · [GitHub](https://github.com/SSzSun) · [LinkedIn](https://www.linkedin.com/in/jaruphat-khenprom)
