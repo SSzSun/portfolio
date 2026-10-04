@@ -37,7 +37,7 @@ export function ProfilePhoto({ photos, name }: Props) {
             loading="eager"
             decoding="async"
             draggable={false}
-            className={`absolute inset-0 size-full object-cover transition-opacity duration-300 motion-reduce:transition-none ${
+            className={`absolute inset-0 size-full object-cover object-top transition-opacity duration-300 motion-reduce:transition-none ${
               visible ? "opacity-100" : "opacity-0"
             }`}
           />

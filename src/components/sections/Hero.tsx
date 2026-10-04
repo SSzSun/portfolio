@@ -69,7 +69,7 @@ export function Hero({ summary }: { summary: string }) {
             <span>Side A</span>
             <span>C-90</span>
           </div>
-          <div className="mt-3 aspect-square overflow-hidden rounded-[0.5rem] border-2 border-charcoal bg-navy">
+          <div className="mt-3 aspect-[4/5] overflow-hidden rounded-[0.5rem] border-2 border-charcoal bg-navy">
             <ProfilePhoto photos={site.avatars} name={site.name} />
           </div>
           <div className="mt-4 flex items-center justify-around rounded-[0.5rem] bg-charcoal py-3 text-beige">
