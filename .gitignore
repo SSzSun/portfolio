@@ -40,6 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# local tooling
-.claude/
+# env template is safe to commit
 !.env.example
