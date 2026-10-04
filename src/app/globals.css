@@ -1,26 +1,149 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Cassette Futurism tokens (design.md). Dark only. */
+@theme {
+  --color-crt: #33ff00;
+  --color-crt-dim: #1f9900;
+  --color-beige: #d2b48c;
+  --color-charcoal: #333333;
+  --color-amber: #ffb000;
+  --color-tape: #cc0000;
+  --color-static: #999999;
+  --color-navy: #1b2838;
+  --color-offwhite: #e8e0d0;
+  --color-ink: #141a20; /* off-black page background, never #000 */
+  --color-panel: #1e2630;
+
+  --font-display: var(--font-vt323), ui-monospace, monospace;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --radius-card: 0.5rem;
+
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    color-scheme: dark;
+  }
+  body {
+    background: var(--color-ink);
+    color: var(--color-offwhite);
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--color-crt);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-crt);
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glow {
+    text-shadow:
+      0 0 4px rgb(51 255 0 / 0.55),
+      0 0 14px rgb(51 255 0 / 0.25);
+  }
+  .glow-amber {
+    text-shadow: 0 0 6px rgb(255 176 0 / 0.45);
+  }
+  .pixel-border {
+    border: 2px solid var(--color-static);
+    box-shadow:
+      4px 4px 0 0 rgb(0 0 0 / 0.35),
+      inset 0 0 0 1px rgb(255 255 255 / 0.03);
+  }
+  .section {
+    padding-block: clamp(4rem, 8vw, 8rem);
+  }
+  .container-x {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+}
+
+/* CRT scanlines + vignette, fixed over the page, ignores pointer events. */
+.crt-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 0) 0,
+      rgb(0 0 0 / 0) 2px,
+      rgb(0 0 0 / 0.18) 3px,
+      rgb(0 0 0 / 0) 4px
+    ),
+    radial-gradient(ellipse at center, transparent 60%, rgb(0 0 0 / 0.45) 100%);
+}
+.crt-overlay::after {
+  /* VHS tracking band sweeping down the screen */
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 18vh;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(232 224 208 / 0.035),
+    transparent
+  );
+  animation: vhs-track 9s linear infinite;
+}
+
+@keyframes vhs-track {
+  from { transform: translateY(-20vh); }
+  to { transform: translateY(120vh); }
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+@keyframes reel-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes shimmer {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+.cursor-blink {
+  animation: blink 1s steps(1) infinite;
+}
+.reel {
+  animation: reel-spin 4s linear infinite;
+  transform-origin: center;
+}
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-panel);
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgb(51 255 0 / 0.08), transparent);
+  animation: shimmer 1.4s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .crt-overlay::after,
+  .cursor-blink,
+  .reel,
+  .skeleton::after {
+    animation: none;
+  }
 }
