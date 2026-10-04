@@ -27,11 +27,12 @@ export function Switch({ checked, onChange, label, disabled }: Props) {
       />
       <span
         aria-hidden="true"
-        className="relative h-5 w-9 rounded-sm border-2 border-static bg-ink"
+        className="relative block h-5 w-9 shrink-0 rounded-sm border-2 border-static bg-ink"
       >
+        {/* Explicit left: buttons center text, which would shift an unpositioned thumb. */}
         <span
-          className={`absolute top-0.5 size-3 bg-beige transition-transform duration-200 ${
-            checked ? "translate-x-[1.1rem]" : "translate-x-0.5"
+          className={`absolute top-0.5 left-0.5 size-3 transition-transform duration-200 ${
+            checked ? "translate-x-4 bg-crt" : "translate-x-0 bg-beige"
           }`}
         />
       </span>

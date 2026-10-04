@@ -5,9 +5,12 @@ export const site = {
   summary:
     "Outstanding ability in Front-end and Back-end. In addition to strong technical skills, I excel in communication and collaboration within a team. I am enthusiastic, adaptable, open-minded, hardworking, a good team player, and capable of working effectively under pressure.",
   email: "jaruphat.kp@gmail.com",
+  // Opens Gmail's compose window; friendlier than mailto for most visitors.
+  gmailCompose: "https://mail.google.com/mail/?view=cm&fs=1&to=jaruphat.kp@gmail.com",
   resume: "/resume.pdf",
-  // Replace with /profile.jpg once the photo is added to /public.
-  avatar: null as string | null,
+  resumeFileName: "Resume_Jaruphat.pdf",
+  // Profile photos; clicking the photo toggles between the two.
+  avatars: ["/profile.webp", "/profile_1.webp"],
   social: {
     github: "https://github.com/SSzSun",
     linkedin: "https://www.linkedin.com/in/jaruphat-khenprom",

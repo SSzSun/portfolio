@@ -81,6 +81,8 @@ export const projectInputSchema = z.object({
 
 export const emailSchema = z.email().max(254);
 
+export const summarySchema = z.string().trim().min(1, "Summary required").max(2000);
+
 export type Metric = z.infer<typeof metricSchema>;
 export type Diagram = z.infer<typeof diagramSchema>;
 export type DiagramNode = z.infer<typeof diagramNodeSchema>;

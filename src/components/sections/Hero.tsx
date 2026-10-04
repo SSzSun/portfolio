@@ -1,17 +1,14 @@
 import { Download, Mail } from "lucide-react";
 import { TypewriterText } from "@/components/effects/TypewriterText";
-import { Reveal } from "@/components/effects/Reveal";
 import { buttonClass } from "@/components/ui/Button";
+import { CopyEmail } from "@/components/ui/CopyEmail";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import { TapeReel } from "@/components/ui/TapeReel";
 import { site } from "@/lib/site";
+import { HeroSummary } from "./HeroSummary";
+import { ProfilePhoto } from "./ProfilePhoto";
 
-export function Hero() {
-  const initials = site.name
-    .split(" ")
-    .map((p) => p[0])
-    .join("");
-
+export function Hero({ summary }: { summary: string }) {
   return (
     <section id="about" aria-labelledby="about-title" className="section">
       <div className="container-x grid items-center gap-12 md:grid-cols-[1.5fr_1fr]">
@@ -25,18 +22,22 @@ export function Hero() {
           <p className="mt-3 text-2xl text-amber">
             {site.role} <span className="text-static">a.k.a.</span> {site.nickname}
           </p>
-          <Reveal>
-            <p className="mt-6 max-w-[65ch] text-xl text-beige">{site.summary}</p>
-          </Reveal>
+          <HeroSummary summary={summary} />
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={site.resume} download className={buttonClass("primary")}>
+            <a href={site.resume} download={site.resumeFileName} className={buttonClass("primary")}>
               <Download aria-hidden="true" className="size-5" /> Download resume
             </a>
-            <a href={`mailto:${site.email}`} className={buttonClass("ghost")}>
+            <a
+              href={site.gmailCompose}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={buttonClass("ghost")}
+            >
               <Mail aria-hidden="true" className="size-5" /> Contact
             </a>
           </div>
+          <CopyEmail className="mt-4" />
 
           <ul className="mt-6 flex gap-4">
             <li>
@@ -62,23 +63,14 @@ export function Hero() {
           </ul>
         </div>
 
-        {/* Cassette-style profile frame. Photo slot until site.avatar is set. */}
+        {/* Cassette-style profile frame. Click the photo to flip sides. */}
         <div className="pixel-border mx-auto w-full max-w-sm rounded-[0.5rem] bg-beige p-4 text-charcoal">
           <div className="flex items-center justify-between font-mono text-xs uppercase">
             <span>Side A</span>
             <span>C-90</span>
           </div>
           <div className="mt-3 aspect-square overflow-hidden rounded-[0.5rem] border-2 border-charcoal bg-navy">
-            {site.avatar ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={site.avatar} alt={site.name} className="size-full object-cover" />
-            ) : (
-              <div className="flex size-full items-center justify-center">
-                <span aria-hidden="true" className="glow text-8xl text-crt">
-                  {initials}
-                </span>
-              </div>
-            )}
+            <ProfilePhoto photos={site.avatars} name={site.name} />
           </div>
           <div className="mt-4 flex items-center justify-around rounded-[0.5rem] bg-charcoal py-3 text-beige">
             <TapeReel size={44} />

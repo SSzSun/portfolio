@@ -6,18 +6,19 @@ import { VisitProvider } from "@/components/layout/VisitProvider";
 import { Experience } from "@/components/sections/Experience";
 import { Hero } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
-import { getExperiences, getProjects, getVisitCount } from "@/lib/data";
+import { getExperiences, getProjects, getSummary, getVisitCount } from "@/lib/data";
 import { getIsAdmin } from "@/lib/supabase/server";
 
 // Content comes from Supabase per request (admin sees hidden rows).
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const [isAdmin, experiences, projects, visits] = await Promise.all([
+  const [isAdmin, experiences, projects, visits, summary] = await Promise.all([
     getIsAdmin(),
     getExperiences(),
     getProjects(),
     getVisitCount(),
+    getSummary(),
   ]);
 
   return (
@@ -25,7 +26,7 @@ export default async function Home() {
       <VisitProvider initial={visits}>
         <Navbar />
         <main id="main">
-          <Hero />
+          <Hero summary={summary} />
           <Experience items={experiences} />
           <Projects items={projects} />
         </main>

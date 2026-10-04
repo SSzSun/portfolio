@@ -1,5 +1,6 @@
 import { Mail } from "lucide-react";
 import { site } from "@/lib/site";
+import { CopyEmail } from "@/components/ui/CopyEmail";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import { TapeReel } from "@/components/ui/TapeReel";
 import { VisitorBadge } from "./VisitorBadge";
@@ -20,12 +21,15 @@ export function Footer() {
           </p>
           <h2 className="glow mt-2 text-4xl text-crt">Let&apos;s build something.</h2>
           <a
-            href={`mailto:${site.email}`}
-            className="mt-4 inline-flex items-center gap-2 text-xl text-beige underline-offset-4 hover:text-crt hover:underline"
+            href={site.gmailCompose}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex min-h-11 items-center gap-2 text-xl text-beige underline-offset-4 hover:text-crt hover:underline"
           >
             <Mail aria-hidden="true" className="size-5" />
-            {site.email}
+            Send an email
           </a>
+          <CopyEmail className="mt-2" />
         </div>
 
         <div className="flex flex-col gap-6 md:items-end">

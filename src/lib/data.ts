@@ -1,4 +1,5 @@
 import "server-only";
+import { site } from "@/lib/site";
 import { createClient } from "@/lib/supabase/server";
 import type { ExperienceRow, ProjectRow } from "@/types/database";
 import {
@@ -59,6 +60,18 @@ export async function getProjects(): Promise<Project[]> {
     return [];
   }
   return data.map(toProject);
+}
+
+/** Hero summary from site_content; falls back to the copy in site.ts. */
+export async function getSummary(): Promise<string> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("site_content")
+    .select("value")
+    .eq("key", "summary")
+    .maybeSingle();
+  if (error) console.error("getSummary", error.message);
+  return data?.value || site.summary;
 }
 
 export async function getVisitCount(): Promise<number> {
